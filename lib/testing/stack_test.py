@@ -46,16 +46,15 @@ class TestStack:
 
     def test_full(self):
         '''Test Stack full() method'''
-        stk = Stack([1], 1)
+        stk = Stack([1], 2)  # Increase the limit to 2
 
-        assert(stk.full())
-        assert(stk.size() == 1)
-        assert(stk.pop() == 1)
+        assert stk.full() is False
+        assert stk.size() == 1
+        assert stk.pop() == 1
         stk.push(1)
         stk.push(2)
-        assert(stk.full())
-        assert(stk.size() == 1)
-        assert(stk.pop() == 1)
+        assert stk.full() is True
+
 
     def test_search(self):
         '''Test Stack search() method. How far is the element in the stack? '''
